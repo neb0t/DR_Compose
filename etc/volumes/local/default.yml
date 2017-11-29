@@ -1,0 +1,11 @@
+pry:
+  volumes:
+    - nginx_config:/etc/nginx
+
+vault:
+  volumes:
+    - vault:/vault
+
+redis:
+  volumes:
+    - redis:/data

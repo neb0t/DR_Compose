@@ -1,0 +1,38 @@
+proxy:
+  container_name: proxy
+  restart: always
+  build: ./imgs/nginx/
+  net: ${CUSTOM_NETWORK}
+  ports:
+    - "80:80"
+    - "443:443"
+
+#vault:
+#  container_name: vault
+#  restart: always
+#  build: ./imgs/vault
+#  privileged: true
+#  net: ${CUSTOM_NETWORK}
+#  expose:
+#    - "8200"
+#  environment:
+#    - "VAULT_DEV_ROOT_TOKEN_ID=${VAULT_DEV_ROOT_TOKEN_ID}"
+
+#redis:
+#  container_name: redis
+#  restart: always
+#  build: ./imgs/redis
+#  privileged: true
+#  net: ${CUSTOM_NETWORK}
+#  ports:
+#    - "6379:6379"
+#  environment:
+#    - "REDIS_PASSWORD=${REDIS_PASSWORD}"
+
+java8:
+  container_name: java8
+  restart: always
+  build: ./imgs/java8
+  net: ${CUSTOM_NETWORK}
+  expose:
+    - "8080"
